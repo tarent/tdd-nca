@@ -1,4 +1,4 @@
-package de.tarent.nca.util
+package de.tarent.nca.testutil
 
 
 import org.testcontainers.containers.GenericContainer

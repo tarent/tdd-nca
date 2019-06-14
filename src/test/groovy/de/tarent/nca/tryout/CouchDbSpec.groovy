@@ -1,7 +1,7 @@
 package de.tarent.nca.tryout
 
-import de.tarent.nca.util.CouchDb
-import de.tarent.nca.util.NeedsCouchDb
+import de.tarent.nca.testutil.CouchDb
+import de.tarent.nca.testutil.NeedsCouchDb
 import groovyx.net.http.RESTClient
 import spock.lang.Specification
 
