@@ -30,13 +30,28 @@ If an external Couch DB is used it is assumed that the Couch DB is reachable at 
 you can change this through environment variable or system option `couchDbUrl` eg.
 
     -DcouchDbUrl=http://localhost:4711
+    
+## Run Couch DB locally
+
+You can start a couch DB instance as docker image:
+
+    docker run -p 5984:5984 couchdb
+    
+Access local Couch db:
+
+    curl localhost:5984
+
 
 ## Technologies
 
+* [Couch DB](http://couchdb.apache.org/)
+    * [Couch DB Api](http://docs.couchdb.org/en/stable/intro/api.html)
 * [Groovy Language](http://www.groovy-lang.org/)
 * [Gradle Build Tool](https://gradle.org/)
 * [Spock Testing Framework](http://spockframework.org/)
 * [httpbuilder](https://github.com/jgritman/httpbuilder) - groovy http client
+* [docker container technology](https://www.docker.com/)
+    * [Couch Db docker container](https://hub.docker.com/_/couchdb)
 * [testcontainers](https://github.com/testcontainers/testcontainers-java) - docker container handling for automated tests
 * [Jackson JSON Library](https://github.com/FasterXML/jackson)
     * [Jackson datatype JSONObject](https://github.com/FasterXML/jackson-datatype-json-org)
