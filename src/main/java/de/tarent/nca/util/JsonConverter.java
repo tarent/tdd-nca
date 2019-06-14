@@ -33,7 +33,7 @@ public class JsonConverter {
         return result;
     }
 
-    public String stringOf(JSONObject o) {
+    public String stringOf(Object o) {
         try {
             return mapper.writeValueAsString(o);
         } catch (JsonProcessingException e) {
