@@ -31,11 +31,12 @@ public class DB {
         return name;
     }
 
-    public Document createDocument(String docName) {
-        URI docUri = getDocumentURI(docName);
+    public String createDocument(Document doc) {
+        String id = "doc-" + UUID.randomUUID();
+        URI docUri = getDocumentURI(id);
         HttpRequest request = HttpRequest.newBuilder()
             .uri(docUri)
-            .PUT(HttpRequest.BodyPublishers.ofString("{\"key\":\"value\"}"))
+            .PUT(HttpRequest.BodyPublishers.ofString(new JsonConverter().stringOf(doc)))
             .build();
 
         try {
@@ -47,7 +48,7 @@ public class DB {
             throw new RuntimeException(e);
         }
 
-        return new Document(docName);
+        return id;
     }
 
     private URI getDocumentURI(String docName) {

@@ -4,8 +4,6 @@ import de.tarent.nca.testutil.CouchDb
 import de.tarent.nca.testutil.NeedsCouchDb
 import spock.lang.Specification
 
-import java.time.LocalDateTime
-
 import static de.tarent.nca.testutil.RestClientFactory.createRESTClient
 
 @NeedsCouchDb
@@ -20,20 +18,17 @@ class DBSpec extends Specification {
     def 'can create document'() {
         given:
         def manager = new DbManager(URI.create(CouchDb.instance.getUrl()))
-
-        def dbName = "db-${System.currentTimeMillis()}-${UUID.randomUUID()}"
-        def docId = "doc-${UUID.randomUUID()}"
+        def dbName = "db-${UUID.randomUUID()}"
         DB db = manager.createDb(dbName)
 
         when:
-        Document doc = db.createDocument(docId);
+        def id = db.createDocument(new Document("SomeDocument"));
 
         then:
-        doc != null;
-        doc.id == docId;
-
-        def result = restClient.get(path: "${dbName}/${docId}")
+        def result = restClient.get(path: "${dbName}/${id}")
         result.status == 200
+
+        result.data.name == "SomeDocument"
 
         cleanup:
         restClient.delete(path: dbName)
