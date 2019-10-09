@@ -1,57 +1,27 @@
 # TDD @ NCA
 
-This project is intended to be used for showing how to develop a Couch DB driver in a test-driven fashion.
+## Speaker
 
-## gradle commands
+* Tim Steffens
+* [t.steffens@tarent.de](mailto:t.steffens@tarent.de)
+* [@tmstff](https://twitter.com/tmstff)
+* [https://github.com/tmstff](https://github.com/tmstff)
+* [weitere Talks / Workshops](https://tmstff.github.io/talks/)
 
-This project uses [gradle](https://gradle.org/) as build tool.
+## Company
 
-To run the tests use
+* tarent Solutions GmbH
+* [https://www.tarent.de/](https://www.tarent.de/)
+* [https://www.tarent.de/academy/](https://www.tarent.de/academy/)
 
-    ./gradlew test
-    
-To build a JAR of the lib (to be found in `build/libs`) use
+## Event
 
-    ./gradlew assemble
-    
-## Docker
+* https://nevercodealone.de/ncaevents/tarent
 
-For the tests, the Couch DB will by default be run in a docker container started by the test containers lib.
-If you want to to use another Couch DB Instance, you can supply `useExternalCouchDB=true` as environment variable or 
-system option, e.g. for command line
+## Slides
 
-    env "useExternalCouchDB=true" ./gradlew test
-    
-or in the IDE for test execution:
+* [TDD@NCA.pdf](TDD@NCA.pdf)
 
-    -DuseExternalCouchDB=true
-    
-If an external Couch DB is used it is assumed that the Couch DB is reachable at `http://localhost:5984`, 
-you can change this through environment variable or system option `couchDbUrl` eg.
+## Project Documentation
 
-    -DcouchDbUrl=http://localhost:4711
-    
-## Run Couch DB locally
-
-You can start a couch DB instance as docker image:
-
-    docker run -p 5984:5984 couchdb
-    
-Access local Couch db:
-
-    curl localhost:5984
-
-
-## Technologies
-
-* [Couch DB](http://couchdb.apache.org/)
-    * [Couch DB Api](http://docs.couchdb.org/en/stable/intro/api.html)
-* [Groovy Language](http://www.groovy-lang.org/)
-* [Gradle Build Tool](https://gradle.org/)
-* [Spock Testing Framework](http://spockframework.org/)
-* [httpbuilder](https://github.com/jgritman/httpbuilder) - groovy http client
-* [docker container technology](https://www.docker.com/)
-    * [Couch Db docker container](https://hub.docker.com/_/couchdb)
-* [testcontainers](https://github.com/testcontainers/testcontainers-java) - docker container handling for automated tests
-* [Jackson JSON Library](https://github.com/FasterXML/jackson)
-    * [Jackson datatype JSONObject](https://github.com/FasterXML/jackson-datatype-json-org)
+* [project-documentation.md](project-documentation.md)
