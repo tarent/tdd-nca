@@ -46,13 +46,13 @@ class JsonConverterTest extends Specification {
     def 'split works for #givenJson'() {
         given:
         def converter = new JsonConverter()
-        def json = converter.jsonObjectOf('{"a": "A"}')
+        def json = converter.jsonObjectOf(givenJson)
 
         when:
-        def split = converter.split(json, A)
+        def split = converter.split(json, (Class[]) givenClasses)
 
         then:
-        split[0] == new A(a: "A")
+        split == expectedObjects
 
         where:
         givenJson                        | givenClasses | expectedObjects

@@ -8,12 +8,15 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 
+import static com.fasterxml.jackson.databind.DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES;
+
 public class JsonConverter {
 
     ObjectMapper mapper = new ObjectMapper();
 
     public JsonConverter() {
         mapper.registerModule(new JsonOrgModule());
+        mapper.configure(FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
     public JSONObject merge(Object ... objects) {
