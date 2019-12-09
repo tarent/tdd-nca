@@ -20,7 +20,7 @@
 
 ## Slides
 
-* [TDD@Softwerkskammer.pdf](TDD@Softwerkskammer.pdf)
+* [open Google Presentation](https://docs.google.com/presentation/d/1rko8MUuf_UZcBKQQAIyIxOIwRZjKakj0L0gsld2j-4o/edit?usp=sharing)
 
 ## Project Documentation
 
